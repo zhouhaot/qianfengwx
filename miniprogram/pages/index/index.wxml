@@ -1,29 +1,122 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="title">快速了解云开发</view>
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" data-type="{{ power.type }}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">
-          {{power.title}}
-          <view class="power_info_text_tag" wx:if="{{power.tag}}">{{power.tag}}</view>
-        </view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem && power.item.length}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem && power.item.length}}" class="power_info_less" src="../../images/arrow.svg"></image>
-      <image wx:if="{{!power.item.length}}" class="power_item_icon" src="../../images/arrow.svg"></image>
+<!-- 顶部轮播 -->
+<swiper
+  class="sw-top"
+  indicator-dots
+  indicator-color="#ffffff"
+  indicator-active-color="#ff0000"
+  autoplay
+  interval="3000"
+  circular
+  indicator-type="expand"
+>
+  <swiper-item
+    wx:for="{{ topBanners }}"
+    wx:key="*this"
+  >
+    <image src="{{fileUrl}}{{ item }}" />
+  </swiper-item>
+</swiper>
+
+<!-- 页面整体布局结构 -->
+<view class="page-container">
+  <!-- 授权登录框 -->
+  <view class="login-container box">
+    <image src="{{fileUrl}}avatar-circle.png" class="avatar" />
+    <view class="content">
+      <view class="nickname">尊敬的用户</view>
+      <view>登录领取20元新人券包</view>
     </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-type="{{ item.type }}" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
-        </view>
-      </view>
+    <button class="btn" size="mini">授权登录</button>
+  </view>
+
+  <!-- 宫格布局 -->
+  <view class="grid-container box">
+    <view class="row top">
+      <image src="{{fileUrl}}grid-1.png" />
+      <image src="{{fileUrl}}grid-2.png" />
+    </view>
+    <view class="row bottom">
+      <image src="{{fileUrl}}grid-3.jpg" />
+      <image src="{{fileUrl}}grid-4.jpg" />
+      <image src="{{fileUrl}}grid-5.jpg" />
+      <image src="{{fileUrl}}grid-6.jpg" />
     </view>
   </view>
-  <cloud-tip-modal showTipProps="{{showTip}}" title="{{title}}" content="{{content}}"></cloud-tip-modal>
+
+  <!-- 推荐饮品 -->
+  <view class="recommend-container box">
+    <view class="title">
+      <image src="{{fileUrl}}drinks-title.png" />
+    </view>
+    <view>蜜雪冰城 (汶川鑫星酒店斜对面店)</view>
+    <scroll-view scroll-x>
+      <view class="sv-goods">
+        <view class="goods-item">
+          <image src="{{fileUrl}}drinks-1.jpg" />
+          <view>茉莉奶绿</view>
+          <view class="price-btn">
+            <text>￥6.00</text>
+            <button class="btn" size="mini">+</button>
+          </view>
+        </view>
+        <view class="goods-item">
+          <image src="{{fileUrl}}drinks-1.jpg" />
+          <view>茉莉奶绿</view>
+          <view class="price-btn">
+            <text>￥6.00</text>
+            <button class="btn" size="mini">+</button>
+          </view>
+        </view>
+        <view class="goods-item">
+          <image src="{{fileUrl}}drinks-1.jpg" />
+          <view>茉莉奶绿</view>
+          <view class="price-btn">
+            <text>￥6.00</text>
+            <button class="btn" size="mini">+</button>
+          </view>
+        </view>
+        <view class="goods-item">
+          <image src="{{fileUrl}}drinks-1.jpg" />
+          <view>茉莉奶绿</view>
+          <view class="price-btn">
+            <text>￥6.00</text>
+            <button class="btn" size="mini">+</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 甜蜜资讯 -->
+  <view class="news-container box">
+    <view class="news-title">甜蜜资讯</view>
+    <swiper class="news-swiper" autoplay>
+      <swiper-item>
+        <image src="{{fileUrl}}news-1.gif" />
+      </swiper-item>
+      <swiper-item>
+        <image src="{{fileUrl}}news-1.gif" />
+      </swiper-item>
+    </swiper>
+  </view>
 </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

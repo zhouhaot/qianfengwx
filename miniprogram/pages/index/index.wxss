@@ -1,142 +1,138 @@
-/**index.wxss**/
-
 page {
-  padding-top: 54rpx;
-  background-color: #f6f6f6;
-  padding-bottom: 60rpx;
+  background-color: #fafafa;
+}
+/* 顶部轮播样式 */
+.sw-top {
+  width: 750rpx;
+  height: 320px;
 }
 
-.container {
-  font-family: PingFang SC;
-}
-
-.title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 44rpx;
-  margin-bottom: 40rpx;
-}
-.function_title {
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: #000000;
-  font-size: 36rpx;
-  text-align: left;
-  width: 93%;
-  margin-top: 50rpx;
-}
-
-.top_tip {
-  font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: #888888;
-  margin-bottom: 28rpx;
-}
-
-.examples_container {
-  display: flex;
-  flex-direction: column;
-  gap: 16rpx;
+.sw-top image {
   width: 100%;
-  align-items: center;
+  height: 100%
 }
 
-.example_item {
-  border: 3rpx solid #e5e5e5;
-  border-radius: 10rpx;
-  padding: 24rpx;
-  width: 90%;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.power {
-  margin-top: 30rpx;
-  border-radius: 5px;
-  background-color: white;
-  width: 93%;
-  padding-bottom: 1rpx;
-}
-
-.power_info {
-  display: flex;
-  padding: 30rpx 25rpx;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.power_info_more {
-  width: 30rpx;
-  height: 30rpx;
-  transform: rotate(90deg);
-}
-
-.power_info_less {
-  width: 30rpx;
-  height: 30rpx;
-  transform: rotate(270deg);
-}
-
-.power_info_text {
+/* 整体布局容器 */
+.page-container {
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  top: 290px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
-.power_info_text_title {
-  margin-bottom: 10rpx;
-  font-weight: 400;
-  font-size: 32rpx;
+.box {
+  background-color: #fff;
+  padding: 12px;
+  width: 680rpx;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+/* 授权登录框 */
+.login-container {
   display: flex;
   align-items: center;
-  font-family: 'PingFang SC';
-  color: #000;
+}
+.login-container .avatar {
+  width: 48px;
+  height: 48px;
+  margin-right: 4px;
+}
+.login-container .content {
+  flex: 1;
+}
+.login-container .content .nickname {
+  font-weight: 700;
+  font-size: 18px;
+}
+.login-container .btn {
+  background-color: #f00;
+  color: #fff;
 }
 
-.power_info_text_tag {
-  margin-left: 20rpx;
-  background-color: #fbe0e0;
-  color: #e54545;
-  padding: 0 7px;
-  font-size: 14px;
-  vertical-align: middle;
-  border-radius: 3px;
+/* 宫格布局 */
+.grid-container .row {
+  display: flex;
 }
 
-.power_info_text_tip {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 28rpx;
-  padding-right: 30rpx;
+.grid-container .top image {
+  height: 340rpx;
 }
 
-.power_item {
-  padding: 30rpx 25rpx;
+.grid-container .bottom {
+  border-top: 1px solid #eaeaea;
+}
+
+.grid-container .bottom image {
+  height: 170rpx;
+}
+
+/* 推荐饮品 */
+.recommend-container {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV8AAAEEBAMAAAB90iqGAAAAMFBMVEX76+787fD96uz+7O7+6Or/5uj/4+b/3N//3+H/4eP/2dz/6uv/1dn97/H/0tb+8/TW+PIVAAAFFElEQVR42tTa2+sMYRjA8edFSrmY1yZRillnkt3X4UqxzTif0s4iRA4jCkUsyqGEVUJyWu5IDpE/QG4piTZcuuJSG/+Bd9/DPu8YM9zsY3yWvXi3zXeefX6/ET8gMsRHkwItUmJlwxPjzLAgCCOlsekJuhco64BI1XclihuxtK9pwKTAFDeiDU20Q1/mIiAixO+KQzvkXbbrEOC11JsO+cFQBg8VOcW7o3iZ7Vo0BF9Rh8YRXyIMFhIWpxa5frulnQNzLfUglIforN9DHCyqqWI7ZNu1HeQrtUBZ0mpdkA9JPtV8hSp4qMBi5Hz4pveiN6R3KZPUxWxsoYv2nUTBJWEli41627gKava6+GIbXfNJgxlXxZmLHNquCeD3i6e3HTt9YwJQYFwVZy7ycpN13d5farWav7e9F1Vpg3mPEFmLXIuNdTLYmnwzvrk37j0t2Rvvpg1mXMlc5MmxtttzgpfE2p7XU+J4p6jSB6fXwpJFynYAPLS93S/yebF8C2EwV7LXIm5oAEP7L8zXh5vede/FuyN1qWTBjCPRh72To4a6Qa8H6F9KOdIud7thFK0XCnFw5iKHkTbBuYPPjZQN3W53XhRtFRpRMNcyFzmqa569Iaqp16MwDE/J4E9RUBYGQTAOOGuR5waheiwGwBf0DXBZV/oYBB+ERRmMKu5alCcFGmCwmBuqowM6eLHzscDg8d9wisuBtgiA2a5KoL3rSnODiRyL58CgMZ5bXK0GNTvg/vkofbS027M+wNUnD0YlnPEkv0cFm/O5vrJGBb/38Q0UwTxDxQb3imv+RABmwyrm7JQK/rqQazTBjGcpqZmN8jUPL82eTXqrdbhBH5wurvjaRMDg8cL8FeObDn6G7yAI5jlKFVHCATPM8pWpb7U3HFUGHcx4rpL59Mvupdlb4Iy3xqsO7/NgsFh+8Xi/6ouqKFcSwcIvy9/V2W+t+3iFHgwYzy0uCS25Ecaqp2/ePFXeriaYsMW9PwfbAeNhVc54y5O+Bx2qYM8DllOMA4bk4YLnOtharWJLXgkGjoGXWfwBB8y48bkjpEv3S4ng+0QTZoypMXs8l/tN+HNHPo9+8/AHX/HE8cP0ejBoTMktdjfi82cujXzyZD+f5QZfIfui0xNmeUO2G4HBd+Q/FPNxTeWEfDx8aHeCZsIgi1n2gFMb4b2WoZUxTcexH5QTlnKSIbURYx/KxMNjm64OYTBjqpmzzAEzO2AVbJahKrPRfpJgnDHT1X+1EXyWSjyeCD5NFIzF2Ju/EdKtlnXh2IVjzVZTOkkb3KvV0RxhgbsR0rFW2lniYGBGasCKHXCH9zxqpZ3rYDARvcfYnAhgZsCZwed/UAfjdwsXABZ/zgu+SB+Mi+wGI7URyuP2b9AH44yZsxFIrgQvWrC96wEOGPG+4+20GxhMq7cS8ik9YIbBR/fGbfm/Me22/GXd7dAGI3fC4ODoZpy2k5MHu4sMaU4MZqKDpMHpYi1xijHTChb8WwzvhjAi0nbLRyNuqOCF8I+D8/7k4bujlO8AxZpwwo1U72YZDMUNTk94m/nChGIangpeCEpRg4fUg3oQRGFk1b9DsQW/WAsFN+yFa+XKog8YYGai+GVBvzk4hiSCiz/gZPFC+B8Mwd7iL0Tip/P+l16pLKSi3it+sgcHAgAAAABA/q+NoKqqqqqqqqqqqqoq7cEhAQAAAICg/68dYQUAAAAAAAAAAAAAAAAAAAAAAAAAAAAArgArqKTgi8qvmAAAAABJRU5ErkJggg==');
+}
+
+.recommend-container .title image {
+  height: 30px;
+  width: 100px;
+}
+
+.recommend-container .sv-goods {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.recommend-container .goods-item {
+  padding: 12px;
+  background: #fff;
+  border-radius: 6px;
+  width: 288rpx;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.recommend-container .goods-item image {
+  width: 240rpx;
+  height: 220rpx;
+}
+
+.recommend-container .goods-item .price-btn {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+wx-button[size=mini] {
+  padding: 0;
+}
+.recommend-container .goods-item .btn  {
+  margin: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background: #f00;
+  color: #fff;
 }
 
-.power_item_title {
-  font-size: 28rpx;
-  color: rgba(0, 0, 0, 0.9);
+/* 资讯 */
+.news-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.news-swiper {
+  width: 100%;
+  border-radius: 12px;
 }
 
-.power_item_icon {
-  width: 30rpx;
-  height: 30rpx;
+.news-swiper swiper-item {
+  border-radius: 12px;
 }
 
-.line {
-  width: 95%;
-  margin: 0 auto;
-  height: 2rpx;
-  background-color: rgba(0, 0, 0, 0.1);
+.news-swiper image {
+  width: 100%;
 }
 
-.environment {
-  color: rgba(0, 0, 0, 0.4);
-  font-size: 24rpx;
-  margin-top: 25%;
-}
