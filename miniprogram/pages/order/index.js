@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    navTop: 0,
+    navWidth: 0,
+    fileUrl: 'cloud://cloud1-4gm1714uc326e5bf.636c-cloud1-4gm1714uc326e5bf-1384293786/mxbc-images/'
   },
 
   /**

@@ -1,2 +1,32 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<!--自定义头部导航栏的布局-->
+<view class="nav-bar">
+  <view class="nav-content"> <!-- 新增包裹容器 -->
+    <view class="nav-tabs">
+      <text class="nav-item">自提</text>
+      <text class="nav-item">外送</text>
+    </view>
+    <view class="search-box">
+      <input placeholder="请输入商品名称"/>
+    </view>
+  </view>
+</view>
+<!-- 页面主体布局 -->
+<view class="nav-bar2">
+  <!-- 店铺信息区域 -->
+  <view class="store-info">
+    <image src="{{fileUrl}}star.png" class="store-icon"></image>
+    <text class="store-name">蜜雪冰城（汶川鑫星酒店斜对面店）</text>
+    <text class="arrow">></text>
+  </view>
+<!--距离-->
+<view class="store-info">
+<image src="{{fileUrl}}star.png" class="store-info"></image>
+<text class="store-name">直线距离585m</text>
+</view>
+  <!-- 功能标签栏 -->
+  <view class="category-tabs">
+    <text class="tab-item active">经典菜单</text>
+    <text class="tab-item">双杯9.9起</text>
+    <text class="tab-item">积分秒兑单</text>
+  </view>
+</view>
