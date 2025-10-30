@@ -128,8 +128,7 @@ page {
   padding: 6px;
 }
 
-.category-item {}
-
+/*左侧分类*/
 .category-item > .title {
   font-size: 18px;
   font-weight: 700;
