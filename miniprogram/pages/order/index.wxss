@@ -1,139 +1,187 @@
+page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* 头部自定义导航 */
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+.nav-bar text {
+  padding: 0 4px;
+}
+.nav-bar .search {
+  display: flex;
+  flex: 1;
+  background: #eaeaea;
+  border-radius: 16px;
+  padding: 2px 6px;
+}
 /* 页面布局容器 */
 .page-container {
-  background-color: #f7f7f7; /* 页面浅灰背景 */
-  min-height: 100vh;         /* 让页面至少铺满屏幕高度 */
-  display: flex;
-  flex-direction: column;    /* 子元素纵向排列 */
-  box-sizing: border-box;
-}
-
-/* 顶部导航栏 */
-.nav-bar {
-  width: auto;
-  height: 150rpx;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* 所有子元素靠底部 */
-  padding: 0 30rpx 20rpx;    /* 下内边距保留，上内边距设为 0 */
-  box-sizing: border-box;
-  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.1);
-}
-
-/* 新增：包裹容器横向排列 */
-.nav-content {
-  display: flex;
-  align-items: center;
   width: 100%;
-  gap: 20rpx; /* 元素间距 */
-}
-
-.nav-tabs {
-  display: flex;
-  gap: 80rpx;
-  white-space: nowrap;
-}
-
-.search-box {
-  flex: 1; /* 搜索框占剩余空间 */
-  height: 64rpx;
-  background-color: #f2f2f2;
-  border-radius: 32rpx;
-  display: flex;
-  align-items: center;
-  padding: 0 20rpx;
-}
-
-.search-box input {
-  width: 100%;
-  font-size: 28rpx;
-  color: #333;
-  background: transparent;
-  border: none;
-  outline: none;
-}
-.nav-item {
-  size: 40px ;
-  display: flex;
-  flex-direction: row;
-  font-size: 32rpx;
-  color: #666;
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 6rpx;
-  cursor: pointer;
- 
-}
-
-/* 当前激活项 */
-.nav-item.active {
-  color: #000000;
-  font-weight: bold;
-}
-
-/*功能区布局*/
-.nav-bar2{
-  width: auto;
-  height: 400rpx;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  box-shadow: 0 4rpx 8rpx rgba(0,0,0,0.1);
-}
-/* 店铺信息容器 */
-.store-info {
-  display: flex;
-  align-items: center;
-  padding: 30rpx 30rpx 20rpx 30rpx;
-  background-color: #ffffff;
-}
-
-/* 店铺图标 */
-.store-icon {
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 16rpx;
-}
-
-/* 店铺名称 */
-.store-name {
-  font-size: 32rpx;
-  color: #333;
   flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* 箭头符号 */
-.arrow {
-  font-size: 28rpx;
-  color: #999;
-}
-
-/* 功能标签栏 */
-.category-tabs {
-  margin-top: auto;
+  border-top: 1px solid #eaeaea;
+  padding-top: 12px;
   display: flex;
-  justify-content: space-around;
-  padding: 20rpx 0;
-  background-color: #f7f7f7;
-  border-bottom: 1rpx solid #e5e5e5;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.tab-item {
-  font-size: 28rpx;
+.store {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 12px;
+}
+.store image {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 400;
   color: #666;
-  padding: 10rpx 20rpx;
-  border-radius: 20rpx;
+}
+.location image {
+  margin-left: 12px;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.message {
+  display: flex;
+  padding: 12px;
+}
+.message image {
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.message .mid {
+  flex: 1;
+}
+
+/* 选项卡 */
+.tabs {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-bottom: 1px solid #eaeaea;
+}
+.tabs .item {
+  flex: 1;
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
   text-align: center;
 }
+.tabs .item image {
+  width: 138px;
+  height: 60px;
+}
+.tabs .active {
+  border-bottom: 3px solid #ff0000;
+}
 
-.tab-item.active {
-  color: #ff4d4d;
-  font-weight: bold;
+/* 商品列表 */
+.products-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+.products-container .category {
+  width: 120px;
+  height: 100%;
+  background-color: #eaeaea;
+}
+.products-container .category .item {
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.products-container .category .active {
+  background-color: #fff;
+}
+.products-container .category .active::before {
+  content: "";
+  height: 30px;
+  border-left: 3px solid #f00;
+  position: absolute;
+  top: 15px;
+  left: 0;
+}
+
+.products-container .list {
+  padding: 6px;
+}
+
+.category-item {}
+
+.category-item > .title {
+  font-size: 18px;
+  font-weight: 700;
+  height: 60px;
+  line-height: 60px;
+}
+.category-item .banner {
+  width: 100%;
+  height: 60px;
+  border-radius: 12px;
+}
+.category-item .product {
+  display: flex;
+  margin-bottom: 12px;
+  padding-right: 12px;
+}
+
+.category-item .product .content {
+  flex: 1;
+}
+
+.category-item .product .thumb {
+  width: 81px;
+  height: 81px;
+  margin-right: 12px;
+}
+.category-item .product .title {
+  font-weight: 700;
+}
+
+.category-item .product .tags text {
+  color:mediumvioletred;
+  padding: 0 6px;
+  font-size: 12px;
+}
+.category-item .product .desc {
+  font-size: 14px;
+  color: #ccc;
+}
+.category-item .product .price-btn {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.category-item button.btn {
+  margin: 0;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0;
 }

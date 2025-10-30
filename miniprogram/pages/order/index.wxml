@@ -1,32 +1,126 @@
-<!--自定义头部导航栏的布局-->
-<view class="nav-bar">
-  <view class="nav-content"> <!-- 新增包裹容器 -->
-    <view class="nav-tabs">
-      <text class="nav-item">自提</text>
-      <text class="nav-item">外送</text>
-    </view>
-    <view class="search-box">
-      <input placeholder="请输入商品名称"/>
-    </view>
+<!-- 自定义头部导航栏的布局 -->
+<view class="nav-bar" style="padding-top: {{navTop}}px; width: {{navWidth - 12}}px; padding-bottom: 12px; padding-left: 6px;">
+  <text>自提</text>
+  <text>外送</text>
+  <view class="search">
+    <icon type="search" size="28"/>
+    <input type="text" placeholder="茉莉奶绿" />
   </view>
 </view>
+
 <!-- 页面主体布局 -->
-<view class="nav-bar2">
-  <!-- 店铺信息区域 -->
-  <view class="store-info">
-    <image src="{{fileUrl}}star.png" class="store-icon"></image>
-    <text class="store-name">蜜雪冰城（汶川鑫星酒店斜对面店）</text>
-    <text class="arrow">></text>
+<view class="page-container">
+  <!-- 门店选择相关 -->
+  <view class="store">
+    <image src="{{fileUrl}}star.png" />
+    <text>蜜雪冰城（汶川鑫星酒店斜对面店）</text>
+    <text>></text>
   </view>
-<!--距离-->
-<view class="store-info">
-<image src="{{fileUrl}}star.png" class="store-info"></image>
-<text class="store-name">直线距离585m</text>
-</view>
-  <!-- 功能标签栏 -->
-  <view class="category-tabs">
-    <text class="tab-item active">经典菜单</text>
-    <text class="tab-item">双杯9.9起</text>
-    <text class="tab-item">积分秒兑单</text>
+  <view class="location">
+    <image src="{{fileUrl}}star.png" />
+    <text>直线距离585m</text>
+  </view>
+  <view class="message">
+    <image src="{{fileUrl}}message.png" />
+    <text class="mid">任意消费可享优惠加购</text>
+    <text>查看更多〉</text>
+  </view>
+
+  <!-- 选项卡 -->
+  <view class="tabs">
+    <view class="item active">经典菜单</view>
+    <view class="item">双杯9.9起</view>
+    <view class="item">
+      <image src="{{fileUrl}}score-title.png" />
+    </view>
+  </view>
+
+  <view class="products-container">
+    <scroll-view class="category" scroll-y>
+      <view class="item">分类1</view>
+      <view class="item">分类2</view>
+      <view class="item active">分类3</view>
+      <view class="item">分类4</view>
+      <view class="item">分类5</view>
+      <view class="item">分类6</view>
+      <view class="item">分类7</view>
+      <view class="item">分类8</view>
+      <view class="item">分类9</view>
+      <view class="item">分类4</view>
+      <view class="item">分类5</view>
+      <view class="item">分类6</view>
+      <view class="item">分类7</view>
+      <view class="item">分类8</view>
+      <view class="item">分类9</view>
+    </scroll-view>
+    <scroll-view class="list" scroll-y>
+      <image src="{{fileUrl}}ad.png" style="width: 100%; height: 40px;" />
+
+      <swiper style="width: 100%; height: 120px;" autoplay>
+        <swiper-item style="border-radius: 8px;">
+          <image src="{{fileUrl}}order-banner-1.gif" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{fileUrl}}order-banner-2.jpg" />
+        </swiper-item>
+        <swiper-item>
+          <image src="{{fileUrl}}order-3.gif" />
+        </swiper-item>
+      </swiper>
+
+      <!-- 各分类下的商品列表 -->
+      <view class="category-item">
+        <view class="title">分类标题</view>
+        <image class="banner" src="{{ fileUrl }}milk-tea-banner.png" />
+        <view class="product">
+          <image class="thumb" src="{{fileUrl}}milk-tea-1.jpg" />
+          <view class="content">
+            <view class="title">商品名称</view>
+            <view class="tags">
+              <text>标签1</text>
+              <text>标签2</text>
+              <text>标签3</text>
+            </view>
+            <view class="desc">商品描述</view>
+            <view class="price-btn">
+              <text>价格</text>
+              <button class="btn" size="mini">+</button>
+            </view>
+          </view>
+        </view>
+        <view class="product">
+          <image class="thumb" src="{{fileUrl}}milk-tea-1.jpg" />
+          <view class="content">
+            <view class="title">商品名称</view>
+            <view class="tags">
+              <text>标签1</text>
+              <text>标签2</text>
+              <text>标签3</text>
+            </view>
+            <view class="desc">商品描述</view>
+            <view class="price-btn">
+              <text>价格</text>
+              <button class="btn" size="mini">+</button>
+            </view>
+          </view>
+        </view>
+        <view class="product">
+          <image class="thumb" src="{{fileUrl}}milk-tea-1.jpg" />
+          <view class="content">
+            <view class="title">商品名称</view>
+            <view class="tags">
+              <text>标签1</text>
+              <text>标签2</text>
+              <text>标签3</text>
+            </view>
+            <view class="desc">商品描述</view>
+            <view class="price-btn">
+              <text>价格</text>
+              <button class="btn" size="mini">+</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
   </view>
 </view>
